@@ -1,0 +1,26 @@
+[fungsi lihat selengkapnya]
+Langkah: npm install plugin => plugins: [require('@tailwindcss/line-clamp')],
+                  <span>
+                    <p class="line-clamp-2">Resep ini kurang enak Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo assumenda dolorem iure sequi illo dignissimos, sit nostrum animi unde perferendis delectus enim saepe sapiente et hic molestiae. Assumenda, atque?</p>
+                    <button class="text-gray-400 lihat-selengkapnya">Lihat selengkapnya</button>
+                  </span>
+
+    <script>
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('lihat-selengkapnya')) {
+            const button = event.target;
+            const paragraph = button.previousElementSibling;
+            if (paragraph.classList.contains('line-clamp-2')) {
+                // Tampilkan teks penuh
+                paragraph.classList.remove('line-clamp-2');
+                button.textContent = 'Sembunyikan';
+            } else {
+                // Potong kembali teks
+                paragraph.classList.add('line-clamp-2');
+                button.textContent = 'Lihat Selengkapnya';
+            }
+        }
+    });
+    </script>
+
+[lanjutnya...]
